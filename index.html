@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgBAMAAACBVGfHAAAAGFBMVEXGWhdoNBUhHBcgGBQcGxgcGhccFBEVFxaiIJs9AAABFElEQVR42r2RO0sDQQCEv909goUxe4qxUPAQLMQmD7ATLMQmiPg4LOz8Cxb+D7tgYXob7UXSKfiIDwKieORKLby7NEbkdi0Sg/6BTPnBDMyM8PkvySCAA0RC2xiE7gFbNi1VBgIA4fPw1t68aoHYCwGJrcTMxH9CjQHE/raXP+2CZq2AWXk14U4BQNpKsgSpmMw8di3G5k9IE1mbylksqMXOnOeMukOdz/nMc7bxLoePRs6vc1G0bA7daVUuSDOu1iDiZd3WAdTTR7NuL7cioS+yE4B0NVqMVe/65RY8vg52q20sqyHgpDfhtzU6vD3rLiGFW4pJN3JBMnvfa4v0grh07KfhL7CJplFMVX9CoaGIGuRRPyqvX+v6R+qFAAAAAElFTkSuQmCC">
+<title>Atölye43 — Sahne için her şey</title>
+<meta name="description" content="Atölye43, Hasanpaşa/Kadıköy: tiyatro, film, reklam ve sergi için dekor, butafor, maske, 3D obje, video mapping, ışık ve efekt. Prova alanı ve çekim stüdyosu.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Archivo:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--ink:#1C1A17;--paper:#F3EEE4;--sand:#E2D9C8;--muted:#6B6255;--accent:#C4541F;--soft:#CFC6B6}
+html{scroll-behavior:smooth}
+body{font-family:'Archivo',system-ui,sans-serif;color:var(--ink);background:var(--paper);line-height:1.55;font-size:17px}
+a{color:inherit}
+.wrap{max-width:1160px;margin:0 auto;padding:0 28px}
+.disp{font-family:'Oswald',sans-serif;font-weight:700;text-transform:none;letter-spacing:-.5px;line-height:.92}
+.kick{font-weight:700;font-size:13px;letter-spacing:3px;color:var(--accent);margin-bottom:14px}
+/* nav */
+nav{position:sticky;top:0;z-index:20;background:rgba(28,26,23,.96);color:var(--paper)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-family:'Oswald';font-weight:700;font-size:24px;letter-spacing:1px;text-decoration:none}
+.logo span{color:var(--accent)}
+.menu{display:flex;gap:26px;font-size:14px;font-weight:600;letter-spacing:1px}
+.menu a{text-decoration:none;opacity:.85}.menu a:hover{opacity:1;color:var(--accent)}
+.burger{display:none;background:none;border:0;color:var(--paper);font-size:26px;cursor:pointer}
+/* hero */
+.hero{background:var(--ink);color:var(--paper);padding:110px 0 90px;position:relative;overflow:hidden}
+.hero h1{font-size:clamp(76px,14vw,190px)}
+.hero p{max-width:640px;font-size:20px;color:var(--soft);margin-top:34px}
+.hero .bar{height:3px;background:var(--accent);margin-top:46px;width:100%}
+.bricks{position:absolute;right:-40px;top:40px;opacity:.12}
+.btns{margin-top:34px;display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-block;padding:14px 24px;font-weight:700;letter-spacing:1px;font-size:14px;text-decoration:none;border:2px solid var(--accent);background:var(--accent);color:#fff}
+.btn.ghost{background:transparent;color:var(--paper);border-color:var(--paper)}
+/* sections */
+section{padding:96px 0}
+section.dark{background:var(--ink);color:var(--paper)}
+section.dark .muted{color:var(--soft)}
+h2.disp{font-size:clamp(46px,7vw,84px);margin-bottom:46px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:2px;background:rgba(28,26,23,.12)}
+.dark .grid{background:rgba(243,238,228,.12)}
+.card{background:var(--paper);padding:30px 28px 34px}
+.dark .card{background:var(--ink)}
+.card .n{font-family:'Oswald';font-size:32px;color:var(--accent)}
+.card h3{font-family:'Oswald';font-weight:700;font-size:26px;line-height:1.05;margin:8px 0 12px}
+.card p{font-size:15.5px;color:#3A352E}
+.dark .card p{color:var(--soft)}
+.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:22px;counter-reset:s}
+.step{border-top:3px solid var(--ink);padding-top:16px}
+.step b{display:block;font-family:'Oswald';font-size:24px;margin-bottom:6px}
+.step b::before{counter-increment:s;content:"0" counter(s) "  ";color:var(--accent)}
+.lead{font-size:20px;max-width:760px;margin-bottom:56px}
+.works{display:grid;grid-template-columns:repeat(2,1fr);gap:28px}
+.ph{aspect-ratio:3/2;background:var(--sand);border:2px dashed #A99E8A;display:flex;align-items:flex-start;padding:14px;font-size:12px;letter-spacing:2px;font-weight:700;color:#8A8172}
+.work h3{font-family:'Oswald';font-size:28px;margin:16px 0 6px}
+.work p{color:#3A352E;font-size:15.5px}
+.cols{display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
+.cols h3{font-family:'Oswald';font-size:28px;margin-bottom:12px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+.chip{border:1.5px solid var(--soft);padding:8px 14px;font-size:14px;font-weight:600}
+/* contact */
+.contact{display:grid;grid-template-columns:1.1fr 1fr;gap:60px}
+.contact h2{color:var(--paper)}
+.contact h2 em{font-style:normal;color:var(--accent);display:block}
+form{display:grid;gap:14px}
+label{font-size:13px;font-weight:700;letter-spacing:1.5px;color:var(--soft)}
+input,textarea,select{width:100%;padding:13px 14px;background:#2A2723;border:1px solid #4A453E;color:var(--paper);font:inherit;font-size:16px}
+textarea{min-height:130px;resize:vertical}
+.note{font-size:14px;color:var(--soft);display:none;border-left:3px solid var(--accent);padding-left:12px}
+.info{font-size:18px;line-height:1.9;margin-top:24px}
+.info b{color:#fff}
+footer{background:#121110;color:#8A8172;font-size:14px;padding:30px 0}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+@media(max-width:900px){
+ .menu{display:none;position:absolute;top:64px;left:0;right:0;background:var(--ink);flex-direction:column;padding:20px 28px;gap:16px}
+ .menu.open{display:flex}.burger{display:block}
+ .steps{grid-template-columns:1fr 1fr}.works,.cols,.contact{grid-template-columns:1fr}
+ section{padding:70px 0}.hero{padding:80px 0 70px}
+}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap">
+ <a class="logo" href="#top"><img class="lg" alt="Atölye43" style="height:40px;width:auto;display:block"></a>
+ <button class="burger" aria-label="Menü" onclick="document.querySelector('.menu').classList.toggle('open')">☰</button>
+ <div class="menu">
+  <a href="#hizmetler">HİZMETLER</a><a href="#sahne-disi">SET VE SERGİ</a><a href="#isler">İŞLER</a><a href="#alanlar">PROVA VE STÜDYO</a><a href="#iletisim">İLETİŞİM</a>
+ </div>
+</div></nav>
+
+<header class="hero" id="top">
+ <svg class="bricks" width="560" height="320" viewBox="0 0 560 320" aria-hidden="true"><g fill="none" stroke="#F3EEE4" stroke-width="2">
+  <rect x="80" y="0" width="150" height="66"/><rect x="236" y="0" width="150" height="66"/><rect x="392" y="0" width="150" height="66"/>
+  <rect x="2" y="72" width="150" height="66"/><rect x="158" y="72" width="150" height="66"/><rect x="314" y="72" width="150" height="66"/><rect x="470" y="72" width="150" height="66"/>
+  <rect x="80" y="144" width="150" height="66"/><rect x="236" y="144" width="150" height="66"/><rect x="392" y="144" width="150" height="66"/>
+  <rect x="158" y="216" width="150" height="66"/><rect x="314" y="216" width="150" height="66"/><rect x="470" y="216" width="150" height="66"/></g></svg>
+ <div class="wrap">
+  <img class="lg" alt="Atölye43" style="width:min(520px,80vw);height:auto;display:block;margin:0 0 28px -8px"><div class="kick">HASANPAŞA · KADIKÖY · İSTANBUL</div>
+  <h1 class="disp">SAHNE İÇİN<br>HER ŞEY.</h1>
+  <p>Tiyatro, film, reklam ve sergi için dekor, butafor, maske, 3D obje, video mapping, ışık ve efekt. Tasarımdan sahneye kadar tek atölyede.</p>
+  <div class="btns"><a class="btn" href="#iletisim">PROJENİZİ ANLATIN</a><a class="btn ghost" href="#hizmetler">NELER YAPIYORUZ</a></div>
+  <div class="bar"></div>
+ </div>
+</header>
+
+<section id="biz">
+ <div class="wrap">
+  <div class="kick">BİZ KİMİZ</div>
+  <h2 class="disp">FİKİRDEN PERDE AÇILIŞINA.</h2>
+  <p class="lead">Atölye43, Hasanpaşa'da tiyatro için kurulmuş bir üretim atölyesi ve prova alanı. Sahnenin dilini, turne koşullarını ve tiyatro pratiğini bilen bir teknik ortak olarak rejinin istediğini sahnede çalışır hâle getiriyoruz: sökülüp takılabilen, kamyona sığan, oyuncunun güvenle üzerine basabildiği dekorlar; sahneyle birlikte düşünülmüş ışık, video ve efekt.</p>
+  <div class="steps">
+   <div class="step"><b>Dinliyoruz</b>Oyunu, rejiyi, sahneyi ve bütçeyi konuşuyor; gerekirse tiyatroda keşif yapıyoruz.</div>
+   <div class="step"><b>Tasarlıyoruz</b>3D model, seyirci görüş açıları ve ölçekli maketle tasarımı üretimden önce görüyoruz.</div>
+   <div class="step"><b>Hesaplıyoruz</b>Teknik çizim, kesim listesi, iş günü planı; taşıyıcı her parça için statik hesap.</div>
+   <div class="step"><b>Üretiyoruz</b>Ahşap, metal, strafor, tekstil ve 3D baskı; ışık, video ve efekt sistemleriyle birlikte.</div>
+   <div class="step"><b>Taşıyoruz</b>Montaj, kurulum kılavuzu, turne ve söküm desteği.</div>
+  </div>
+ </div>
+</section>
+
+<section id="hizmetler" class="dark">
+ <div class="wrap">
+  <div class="kick">HİZMETLER</div>
+  <h2 class="disp">ELLE TUTULAN VE SAHNEYİ CANLANDIRAN.</h2>
+  <div class="grid">
+   <div class="card"><div class="n">01</div><h3>Dekor tasarımı ve üretimi</h3><p>Ahşap, metal ve strafor ile modüler, taşınabilir ya da sabit dekor. Çelik karkaslı paneller, basamak ve platformlar; tuğla, taş, beton ve ahşap görünümlü kaplamalar.</p></div>
+   <div class="card"><div class="n">02</div><h3>Butafor ve aksesuar</h3><p>Özel obje, mobilya, yapay doku, organik form; kırılan, dökülen, taşınan her şey. Gerçeğinden hafif, sahnede gerçeğinden inandırıcı.</p></div>
+   <div class="card"><div class="n">03</div><h3>Maske</h3><p>Oyuncu ve dekor maskeleri: modelleme, kalıp, 3D baskı, el boyama. Görüşü, nefesi ve sesi düşünen tasarım.</p></div>
+   <div class="card"><div class="n">04</div><h3>3D objeler ve dijital imalat</h3><p>Bulunmayan parçayı modelleyip basıyoruz: aksesuar, dekor detayı, prototip, ölçekli maket.</p></div>
+   <div class="card"><div class="n">05</div><h3>Kostüm</h3><p>Dönem ve çağdaş kostümde kalıp, dikim ve uygulama; yaşlandırma ve boya.</p></div>
+   <div class="card"><div class="n">06</div><h3>Işık tasarımı ve uygulama</h3><p>Oyunun ışık tasarımı; dekorla bütünleşik ışık: pencere arkası, aplik, LED şerit, pratik ışıklar.</p></div>
+   <div class="card"><div class="n">07</div><h3>Video mapping ve projeksiyon</h3><p>Dekor yüzeylerine, perdeye ve objelere mapping; projeksiyona göre hazırlanmış yüzeyler.</p></div>
+   <div class="card"><div class="n">08</div><h3>Efekt tasarımı ve uygulama</h3><p>Duman ve sis; düşen, açılan, kaybolan, dönen dekor parçaları; sahne hileleri ve özel düzenekler.</p></div>
+   <div class="card"><div class="n">09</div><h3>Tasarım ve mühendislik danışmanlığı</h3><p>Başka atölyede üretilecek dekorlar için teknik çizim, 3D model, statik hesap ve kurulum kılavuzu.</p></div>
+  </div>
+ </div>
+</section>
+
+<section id="sahne-disi">
+ <div class="wrap">
+  <div class="kick">SAHNENİN DIŞINDA</div>
+  <h2 class="disp">SET, VİTRİN, SERGİ, ATÖLYE.</h2>
+  <div class="grid">
+   <div class="card"><div class="n">10</div><h3>Film, dizi ve reklam setleri</h3><p>Sanat yönetmeninin çizimine göre set dekoru: duvar, cephe, mobilya, özel obje. Atölyede üretim, sette montaj ve söküm.</p></div>
+   <div class="card"><div class="n">11</div><h3>Vitrin, fuar ve etkinlik</h3><p>Mağaza vitrini, lansman ve etkinlik dekoru, fuar standı, fotoğraf köşesi.</p></div>
+   <div class="card"><div class="n">12</div><h3>Müze ve sergi</h3><p>Ölçekli maket, replika obje, sergi kaidesi ve vitrin içi düzenleme.</p></div>
+   <div class="card"><div class="n">13</div><h3>Atölyeler ve eğitim</h3><p>Tiyatro bölümleri, öğrenciler ve topluluklar için butafor, maket ve sahne tasarımı atölyeleri.</p></div>
+  </div>
+ </div>
+</section>
+
+<section id="isler" style="background:var(--sand)">
+ <div class="wrap">
+  <div class="kick">SEÇİLİ İŞLER</div>
+  <h2 class="disp">ATÖLYEDEN.</h2>
+  <div class="works">
+   <div class="work"><div class="ph">FOTOĞRAF / RENDER</div><h3>Teklif · loft dekoru</h3><p>Tuğla duvarlar, fabrika penceresi, metal kapı, merdiven ve sahanlık. Çelik karkas, strafor kaplama, dekora gömülü ışık, turneye uygun panel sistemi.</p></div>
+   <div class="work"><div class="ph">FOTOĞRAF / RENDER</div><h3>Kumbaracı50 · salon</h3><p>Farklı oturma düzenlerine göre kurulan modüler seyirci platformu ve salonla fuayeyi ayıran katlanır ses bölmesi.</p></div>
+   <div class="work"><div class="ph">FOTOĞRAF / RENDER</div><h3>Sahne maskesi ve kaidesi</h3><p>Tamamı 3D baskı; masaya sabitlenen kaide, mıknatısla takılan maske.</p></div>
+   <div class="work"><div class="ph">FOTOĞRAF / RENDER</div><h3>Katlanır şövale</h3><p>Masif kayından, sökülüp katlanan sahne şövalesi; 1:1 kesim şablonlarıyla üretim.</p></div>
+  </div>
+ </div>
+</section>
+
+<section id="alanlar" class="dark">
+ <div class="wrap">
+  <div class="kick">KİRALIK ALANLAR · ÜRETİM AĞI</div>
+  <h2 class="disp">TEK ADRES, GENİŞ AĞ.</h2>
+  <div class="cols">
+   <div><h3>Prova alanı</h3><p class="muted">Oyun ve okuma provaları, masa başı çalışmalar, reji toplantıları ve atölye çalışmaları için saatlik, günlük ya da aylık.</p></div>
+   <div><h3>Çekim stüdyosu</h3><p class="muted">İki kamera, ışık ve ses ekipmanıyla podcast, röportaj, tanıtım videosu ve kısa içerik çekimi.</p></div>
+   <div><h3>Çözüm ortaklarımızla</h3><p class="muted">Atölyemizin yetmediği yerde işi tek elden yürütüyoruz:</p>
+    <div class="chips"><span class="chip">Lazer kesim</span><span class="chip">CNC kesim</span><span class="chip">Vakum form</span><span class="chip">Metal ve kaynak</span><span class="chip">Seri kostüm dikimi</span></div></div>
+  </div>
+ </div>
+</section>
+
+<section id="iletisim" class="dark" style="border-top:1px solid #2E2B27">
+ <div class="wrap contact">
+  <div>
+   <div class="kick">İLETİŞİM</div>
+   <h2 class="disp">OYUNUNUZU ANLATIN.<em>SAHNESİNİ BİRLİKTE KURALIM.</em></h2>
+   <div class="info"><b>atolye@atolye43.com</b><br>Instagram: <a href="https://www.instagram.com/atolye_43/" target="_blank" rel="noopener"><b>@atolye_43</b></a><br>Uzunçayır Caddesi, Kadıköy Yapı İş Merkezi, No: 43C/D<br>Hasanpaşa · Kadıköy · İstanbul</div>
+  </div>
+  <form id="f">
+   <div><label>ADINIZ / TOPLULUĞUNUZ</label><input name="ad" required></div>
+   <div><label>E-POSTA</label><input name="eposta" type="email" required></div>
+   <div><label>KONU</label><select name="konu"><option>Dekor ve butafor</option><option>Işık, video, efekt</option><option>Film / reklam seti</option><option>Vitrin, fuar, sergi</option><option>Prova alanı</option><option>Çekim stüdyosu</option><option>Atölye / eğitim</option><option>Diğer</option></select></div>
+   <div><label>PROJENİZ BİRKAÇ CÜMLEYLE</label><textarea name="mesaj" required placeholder="Oyun/proje, sahne, tarih, kabaca bütçe..."></textarea></div>
+   <button class="btn" type="submit">MESAJI HAZIRLA</button>
+   <p class="note" id="note">E-posta uygulamanız açılmadıysa mesajınızı atolye@atolye43.com adresine gönderebilirsiniz.</p>
+  </form>
+ </div>
+</section>
+
+<footer><div class="wrap"><span>© 2026 Atölye43 · Sahne için her şey</span><span>Hasanpaşa · Kadıköy · İstanbul</span></div></footer>
+
+<script>
+document.querySelectorAll("img.lg").forEach(function(i){i.src="data:image/png;base64,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"});
+
+document.getElementById('f').addEventListener('submit',function(e){
+ e.preventDefault();
+ var d=new FormData(this);
+ var body='Ad: '+d.get('ad')+'\nE-posta: '+d.get('eposta')+'\nKonu: '+d.get('konu')+'\n\n'+d.get('mesaj');
+ document.getElementById('note').style.display='block';
+ try{location.href='mailto:atolye@atolye43.com?subject='+encodeURIComponent('Web sitesi: '+d.get('konu'))+'&body='+encodeURIComponent(body);}catch(err){}
+});
+document.querySelectorAll('.menu a').forEach(function(a){a.addEventListener('click',function(){document.querySelector('.menu').classList.remove('open')})});
+</script>
+</body>
+</html>
